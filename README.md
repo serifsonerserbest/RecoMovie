@@ -12,10 +12,10 @@ Name : Soner
 Submission ID : 23831
 
 We managed to be in top 20 by scoring 1.018 RMSE where the best score of the competition is 1.016 RMSE.
-You can find the competition link [here](https://www.crowdai.org/challenges/epfl-ml-recommender-system/leaderboards)
+You can find the competition link [here](https://www.crowdai.org/challenges/epfl-ml-recommender-system/leaderboards).
 
 ## Project Report
-You can find the detailed project report [here](https://github.com/serifsonerserbest/Recommender-System/blob/master/Recommender_System_Project_Report.pdf)
+You can find the detailed project report [here](https://github.com/serifsonerserbest/Recommender-System/blob/master/Recommender_System_Project_Report.pdf).
 
 ## Required Libraries and Setting up the Envioronment 
 
@@ -45,10 +45,10 @@ Install custom libraries
 ```
 
 * PySpark
-  * You can find a detailed installation guide for pySpark [here](https://medium.com/tinghaochen/how-to-install-pyspark-locally-94501eefe421)
+  * You can find a detailed installation guide for pySpark [here](https://medium.com/tinghaochen/how-to-install-pyspark-locally-94501eefe421).
 
 * Data Sets:
-  * Data sets are taken from [here](https://www.crowdai.org/challenges/epfl-ml-recommender-system/dataset_files)
+  * Data sets are taken from [here](https://www.crowdai.org/challenges/epfl-ml-recommender-system/dataset_files).
   note that you need a epfl e-mail address to reach web site.
   
 ## Files
