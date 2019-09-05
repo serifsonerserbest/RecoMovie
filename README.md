@@ -1,4 +1,6 @@
-# ML Project 2 Recommender System
+# Netflix Recommender System
+
+This project is a part of the the 'Machine Learning' course at Swiss Federal Institute of Technology Lausanne (EPFL). Detail about the course can be found [here](https://edu.epfl.ch/coursebook/en/machine-learning-CS-433).
 
 ## Team Members
 
