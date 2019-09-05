@@ -12,7 +12,7 @@ Name : Soner
 Submission ID : 23831
 
 We managed to be in top 20 by scoring 1.018 RMSE where the best score of the competition is 1.016 RMSE.
-You can find the competition link [here] (https://www.crowdai.org/challenges/epfl-ml-recommender-system/leaderboards)
+You can find the competition link [here](https://www.crowdai.org/challenges/epfl-ml-recommender-system/leaderboards)
 
 ## Project Report
 You can find the detailed project report [here](https://github.com/serifsonerserbest/Recommender-System/blob/master/Recommender_System_Project_Report.pdf)
