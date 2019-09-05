@@ -19,7 +19,7 @@ You can find the detailed project report [here](https://github.com/serifsonerser
 
 ## Required Libraries and Setting up the Envioronment 
 
-* We used python evironment for our project(anaconda)
+* We used python evironment for our project (anaconda).
 
 pip install libraries
 * scikit-learn
