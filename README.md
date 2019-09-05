@@ -11,6 +11,11 @@
 Name : Soner
 Submission ID : 23831
 
+We managed to be in top 20 by scoring 1.018 RMSE where the best score of the competition is 1.016 RMSE.
+You can find the competition link [here] (https://www.crowdai.org/challenges/epfl-ml-recommender-system/leaderboards)
+
+## Project Report
+You can find the detailed project report [here](https://github.com/serifsonerserbest/Recommender-System/blob/master/Recommender_System_Project_Report.pdf)
 
 ## Required Libraries and Setting up the Envioronment 
 
@@ -28,17 +33,17 @@ Install custom libraries
 * Surprise
   * You can find detailed installation guide and how to use the library here: http://surpriselib.com
   * Or you can directly install it from this [this GitHub repo](https://github.com/NicolasHug/Surprise) by:
-  ```
-     git clone https://github.com/NicolasHug/surprise.git
-     python setup.py install
-  ```
+```
+ git clone https://github.com/NicolasHug/surprise.git
+ python setup.py install
+```
 
 * PyFM
   * You can directly install it from this [this GitHub repo](https://github.com/coreylynch/pyFM) by:
- ```
-     pip install git+https://github.com/coreylynch/pyFM
-  ```
-  
+```
+ pip install git+https://github.com/coreylynch/pyFM
+```
+
 * PySpark
   * You can find a detailed installation guide for pySpark [here](https://medium.com/tinghaochen/how-to-install-pyspark-locally-94501eefe421)
 
@@ -65,18 +70,3 @@ Install custom libraries
   * implementations.py : Contains helper functions, i.e. reading csv files, transforming data frames etc.
 * Pickle Object:
 * linreg.pkl : linear regression model for blending
-  
-## Possible Problem with Spark
-
-It is possible to get an error for Java connection if PySpark's ALS function is used with maxIter value greater than 24. But it is also possible that is a problem only on our devices. 
-  
-
-
-
-
-
-
-
-
-
-
