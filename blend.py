@@ -1,14 +1,8 @@
 """
 This file contains functions for blending models.
 
-
-
 **REMARK** It is not recommended to try pySpark ALS algorith with more than 24 maxIter value because it may give error after 24 iteration.
 """
-
-
-
-
 
 import numpy as np
 import pandas as pd
@@ -18,15 +12,14 @@ from sklearn.model_selection import train_test_split
 from surprise import *
 from surprise.model_selection import PredefinedKFold
 from surprise.model_selection import GridSearchCV
-from model_pyfm import *
-from model_surprise import *
-from model_pyspark import *
-from model_means import *
-from model_matrixfactorization import *
+from models.model_pyfm import *
+from models.model_surprise import *
+from models.model_pyspark import *
+from models.model_means import *
+from models.model_matrixfactorization import *
 from matrix_fact_helpers import *
 
 from sklearn.linear_model import Ridge
-
 
 def make_dataframe(filepath):
     """
@@ -43,9 +36,7 @@ def make_dataframe(filepath):
     df = df.drop(['Id', 'Prediction'], axis=1)
     return df
 
-
-
-def make_datasets(train_path="data_train.csv",predict_path="data_test.csv"):
+def make_datasets(train_path="data/data_train.csv",predict_path="data/data_test.csv"):
     """
     Reads training csv file and splits it into training and testing set as pandas dataframe, for blending(voting) models
     Reads to be predicted csv file as pandas dataframe
@@ -72,8 +63,7 @@ def make_datasets(train_path="data_train.csv",predict_path="data_test.csv"):
     test_file = 'tmp_test.csv'
     data_train.to_csv(train_file, index=False, header=False)
     data_test.to_csv(train_file, index=False, header=False)
-
-
+    
     return data_train,data_test,data_actual_train,data_actual_predict
 
 def get_predicts(data_train,data_test,spark_context):
@@ -100,23 +90,6 @@ def get_predicts(data_train,data_test,spark_context):
 
     als_pred = pyspark_ALS(data_train,data_test,spark_context)
 
-
-
-    #ratings_train = load_data_as_scipy(ratings_train_file)
-    #ratings_test = load_data_as_scipy(ratings_test_file)
-
-
-    #pred_globalmean = implementation_global_mean(ratings_train, ratings_test)
-    #pred_usermean = implementation_user_mean(ratings_train, ratings_test)
-    #pred_itemmean = implementation_item_mean(ratings_train, ratings_test)
-
-    #pred_sgd = implementation_SGD(ratings_train ,ratings_test)
-    #pred_als = implementation_ALS(ratings_train,ratings_test)
-
-
-
-
-
     svdpp_pred = surprise_SVDpp(train_file,test_file)
     pyfm_pred = pyfm_predict(data_train,data_test)
 
@@ -132,6 +105,7 @@ def get_predicts(data_train,data_test,spark_context):
     #,pred_globalmean,pred_usermean,pred_itemmean,pred_sgd,pred_als])
 
     return all_predictions
+
 def calculate_rmse(real_labels, predictions):
     """Calculate RMSE."""
     return np.linalg.norm(real_labels - predictions) / np.sqrt(len(real_labels))
@@ -154,7 +128,3 @@ def get_weights(all_preds,target):
     rmse = calculate_rmse(target, linreg.predict(all_preds.T))
     print(rmse)
     return weights,linreg,rmse
-
-# def get_als_pred(data_train,data_test,spark_context,r,l,i):
-#     als_pred = pyspark_ALS(data_train,data_test,spark_context,r,l,i)
-#     return als_pred

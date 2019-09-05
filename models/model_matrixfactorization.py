@@ -4,8 +4,6 @@ This file contains the models used for movie recommender system created by using
     Models: Matrix factorization with ALS and SGD
 
 Data sets transformed into respected datasets needed for the functions.
-
-
 """
 import numpy as np
 import pandas as pd
@@ -14,7 +12,6 @@ from itertools import groupby
 from sklearn.feature_extraction import DictVectorizer
 from implementations import *
 from matrix_fact_helpers import *
-
 
 def implementation_SGD(train, submission_set):
     # Hyperparameters

@@ -6,12 +6,7 @@ This file contains the model used for movie recommender system from PySpark Libr
 Data sets transformed into respected datasets needed for the library.
 
 **REMARK** It is not recommended to try pySpark ALS algorith with more than 24 maxIter value because it may give error after 24 iteration.
-
-
 """
-
-
-
 
 import numpy as np
 import pandas as pd
@@ -20,10 +15,6 @@ from pyspark.mllib.recommendation import ALS
 import os
 from sklearn.feature_extraction import DictVectorizer
 from implementations import *
-
-
-
-
 
 def predictions_ALS(train, test, **kwargs):
     """
@@ -74,6 +65,7 @@ def predictions_ALS(train, test, **kwargs):
     df.index = range(len(df))
 
     return df
+
 def pyspark_ALS(df,df_predict,sc,r=20,l=0.1,i=24):
     print("ALS")
     pred_als = predictions_ALS(df, df_predict, spark_context=sc, rank=r, lambda_=l, iterations=i)

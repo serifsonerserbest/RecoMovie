@@ -4,11 +4,7 @@ This file contains the model used for movie recommender system from PyFM Library
     PyFM models: pylibfm.FM (Matrix Factorization)
 
 Data sets transformed into respected datasets needed for the library.
-
-
 """
-
-
 
 import numpy as np
 import pandas as pd
@@ -16,7 +12,6 @@ import os
 from pyfm import pylibfm
 from sklearn.feature_extraction import DictVectorizer
 from implementations import *
-
 
 def pyfm_predict(train_actual,predict):
     """
@@ -49,8 +44,3 @@ def pyfm_predict(train_actual,predict):
     fm.fit(X_train, y_train_actual)
     preds = fm.predict(X_test)
     return np.clip(preds,1,5)
-
-
-
-    ##### Matrix Factorization    ############################################################
-    ########################################################################################################################

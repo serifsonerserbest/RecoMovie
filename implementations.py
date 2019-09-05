@@ -1,9 +1,6 @@
 """
 In general this file contains functions for general purpose like loading data, converting data frames into
 correct forms, and tuning hyper parameters
-
-
-
 """
 
 from surprise import *
@@ -14,7 +11,6 @@ import pandas as pd
 import numpy as np
 
 import pickle
-
 
 def submission_table(original_df, col_userID, col_movie, col_rate):
     """
@@ -106,12 +102,6 @@ def tuneHyperParams(algtype, trainset, testset, df, param_grid):
     gs = GridSearchCV(algtype, param_grid, measures=['rmse'], cv=3)
 
     model = gs.fit(data)
-
-    # best RMSE score
-    #print(gs.best_score['rmse'])
-
-    # combination of parameters that gave the best RMSE score
-    #print(gs.best_params['rmse'])
 
     return gs
 

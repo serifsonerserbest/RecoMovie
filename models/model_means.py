@@ -4,8 +4,6 @@ This file contains the models used for movie recommender system created by using
     Models:  user mean, item mean, global mean
 
 Data sets transformed into respected datasets needed for the functions.
-
-
 """
 
 import numpy as np
@@ -15,10 +13,6 @@ from itertools import groupby
 from sklearn.feature_extraction import DictVectorizer
 from implementations import *
 from matrix_fact_helpers import *
-
-
-##### Baseline Implementations    ############################################################
-########################################################################################################################
 
 def implementation_global_mean(train, submission_set):
     """baseline method: use the global mean."""
@@ -70,7 +64,6 @@ def implementation_user_mean(train, submission_set):
     dummy, dummy, pred = sp.find(pred_set)
 
     return pred
-
 
 def implementation_item_mean(train, submission_set):
     """baseline method: use item means as the prediction."""

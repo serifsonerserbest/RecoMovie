@@ -6,13 +6,7 @@ This file contains all the models from Surprise library.
 
 All the models all perfectly compatible with the trainset and testset format
 provided by the Database module of the Surprise library.
-
-
-
-
 """
-
-
 
 from surprise import SlopeOne, BaselineOnly, KNNBaseline, SVD, SVDpp, accuracy
 import numpy as np
@@ -57,6 +51,7 @@ def surprise_SVD(train_file,test_file):
         val = predictions[i].est
         pred[i] = val
     return pred
+
 def surprise_SVDpp(train_file,test_file):
     """
     Svd++ with Surprise library.
@@ -100,6 +95,7 @@ def surprise_SVDpp(train_file,test_file):
         val = predictions[i].est
         pred[i] = val
     return pred
+
 def surprise_knn_ib(train_file,test_file):
     """
     Knn itembased with Surprise library.
@@ -163,6 +159,7 @@ def surprise_knn_ub(train_file,test_file):
         val = predictions[i].est
         pred[i] = val
     return pred
+
 def surprise_baseline(train_file,test_file):
     """
     Baseline with Surprise library.
@@ -192,6 +189,7 @@ def surprise_baseline(train_file,test_file):
         val = predictions[i].est
         pred[i] = val
     return pred
+
 def surprise_slopeOne(train_file,test_file):
     """
     SlopeOne with Surprise library.

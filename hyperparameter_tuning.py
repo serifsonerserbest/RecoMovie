@@ -4,10 +4,8 @@ This file contains hyper paramater tuning functions for collabrative filtering m
 Hyper parameter tuning for surprise model : it is an general function should work with all Surprise models.
 Hyper parameter tuning for pySpark model: uses cross validation to find hyper parameters giving the optimal rmse.
 
-
 **REMARK** It is not recommended to try pySpark ALS algorith with more than 24 maxIter value because it may give error after 24 iteration.
 """
-
 
 from surprise import *
 from surprise.model_selection import PredefinedKFold
@@ -20,8 +18,6 @@ from pyspark.ml import Pipeline
 from pyspark.ml.recommendation import ALS
 from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.sql.types import IntegerType
-
-
 
 import pandas as pd
 import numpy as np
